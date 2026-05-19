@@ -1,7 +1,7 @@
 
 import pulp
 
-# 1. Definir el problema (Minimización)
+# 1. Definir el problema (Maxmimizar)
 model = pulp.LpProblem("Cloud_Optimization", pulp.LpMaximize)
 
 # 2. Definir Variables (Enteras, ya que no puedes rentar media instancia)

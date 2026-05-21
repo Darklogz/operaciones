@@ -19,8 +19,8 @@ model += x1 + x2 <=8, "Ram/s"
 model.solve()
 
 print(f"Estado: {pulp.LpStatus[model.status]}")
-print(f"Armar Tipo A: {x1.varValue}")
-print(f"Armar Tipo B: {x2.varValue}")
+print(f"seguridad basica: {x1.varValue}")
+print(f"seguridad profunda: {x2.varValue}")
 print(f"Seguridad máxima: {pulp.value(model.objective)}")
 
 #source .venv/bin/activate

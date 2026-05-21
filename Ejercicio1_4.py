@@ -21,8 +21,8 @@ model += 1500*x1 + 4000*x2 <=30000, "dinero"
 model.solve()
 
 print(f"Estado: {pulp.LpStatus[model.status]}")
-print(f"Armar Tipo A: {x1.varValue}")
-print(f"Armar Tipo B: {x2.varValue}")
+print(f"blade estándar: {x1.varValue}")
+print(f"Rack pro: {x2.varValue}")
 print(f"Ep maximo: {pulp.value(model.objective)}")
 
 #source .venv/bin/activate

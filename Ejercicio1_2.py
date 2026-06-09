@@ -19,8 +19,8 @@ model += x1 + 3*x2 <=100, "Maximo tiempo"
 model.solve()
 
 print(f"Estado: {pulp.LpStatus[model.status]}")
-print(f"Armar Tipo A: {x1.varValue}")
-print(f"Armar Tipo B: {x2.varValue}")
+print(f"Armar Escritorio: {x1.varValue}")
+print(f"Armar Laptop: {x2.varValue}")
 print(f"Costo Mínimo Diario: ${pulp.value(model.objective)}")
 
 #source .venv/bin/activate

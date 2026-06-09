@@ -18,6 +18,6 @@ model += 2 * x1 + 2 * x2 >= 14, "Retencion_Dias"
 model.solve()
 print(f"Estado: {pulp.LpStatus[model.status]}")
 print(f"Estandar: {x1.varValue}")
-print(f"Precio: {x2.varValue}")
+print(f"Premium: {x2.varValue}")
 print(f"Costo Mínimo Mensual: ${pulp.value(model.objective)}")
 #source .venv/bin/activate

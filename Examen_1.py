@@ -13,6 +13,8 @@ model += 30 * x1 + 50 * x2, "Ganancia Maxima"
 # 4. Restricciones
 model += x1 + 2 * x2 <= 16, "RAM"
 model += 3 * x1 + 2 * x2 <= 24, "vCPU"
+model += x1 >= 0, "no negativo"
+model += x2 >= 0, "no negativo 2"
 
 # 5. Resolver y mostrar
 model.solve()

@@ -4,20 +4,24 @@ import pulp
 model = pulp.LpProblem("Cloud_Optimization", pulp.LpMaximize)
 
 # 2. Definir Variables (Enteras, ya que no puedes rentar media instancia)
-x1 = pulp.LpVariable("Personaje", lowBound=0, upBound=40, cat='Integer')
-x2 = pulp.LpVariable("Escenario", lowBound=0, upBound=30, cat='Integer')
+x1 = pulp.LpVariable("ilustraciones", cat='Integer')
+x2 = pulp.LpVariable("íconos", lowBound=0, upBound=8, cat='Integer')
 
 # 3. Función Objetivo
-model += 80 * x1 + 60 * x2, "Costo_Total"
+model += 40 * x1 + 20 * x2, "Ganancia Maxima"
 
 # 4. Restricciones
-model += 2 * x1 + 1 * x2 <= 12, "GPU_Horas"
-model += 1 * x1 + 2 * x2 <= 14, "VRAM_GB"
+model += 2 * x1 + x2 <= 12, "horas trabajador"
+model += x1 + x2 <= 24, "horas servidor"
+model += x1 >= 0, "no negativo"
+model += x2 >= 0, "no negativo 2"
+model += x1 >= 2, "pago inicial"
+model += x2 <= 8, "máximo de iconos"
 
 # 5. Resolver y mostrar
 model.solve()
 print(f"Estado: {pulp.LpStatus[model.status]}")
-print(f"Personaje: {x1.varValue}")
-print(f"Escenario: {x2.varValue}")
+print(f"ilustraciones: {x1.varValue}")
+print(f"íconos: {x2.varValue}")
 print(f"Ganancia Maxima: ${pulp.value(model.objective)}")
 #source .venv/bin/activate

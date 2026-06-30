@@ -35,17 +35,19 @@ def dijkstra(grafo, inicio, destino):
 
 
 grafo_red = {
-    'A': {'B': 3, 'C': 5},
-    'B': {'C': 1, 'D': 6},
-    'C': {'D': 2, 'E': 9},
-    'D': {'E': 3},
-    'E': {}
+    'A': {'B': 3, 'C': 6},
+    'B': {'C': 2, 'D': 8},
+    'C': {'D': 4, 'E': 7},
+    'D': {'E': 1, 'F': 5},
+    'E': {'F': 3, 'G': 8},
+    'F': {'G': 2},
+    'G': {}
 }
 
 origen = 'A'
-fin = 'E'
+fin = 'G'
 latencia_minima, ruta_optima = dijkstra(grafo_red, origen, fin)
 
 print("RESULTADO DEL ALGORITMO DE DIJKSTRA")
 print(f"Ruta óptima de enrutamiento: {' -> '.join(ruta_optima)}")
-print(f"Latencia mínima total: {latencia_minima} ms")
+print(f"Latencia mínima total: {latencia_minima} km")

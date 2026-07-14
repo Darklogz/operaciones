@@ -2,7 +2,7 @@ from scipy.optimize import minimize
 
 def costo(v):
     x, y = v
-    return x**2 + y**2 + x*y - 30*x + 45*y + 600
+    return x**2 + y**2 + x*y - 25*x + 35*y + 500
  
 limites = [(0, None), (0, None)]
 iteracion = [0]

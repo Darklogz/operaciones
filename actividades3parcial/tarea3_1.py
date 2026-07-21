@@ -1,4 +1,4 @@
-from scipy.optimize import minimize
+from scipy.optimize import maximize
 
 def costo(v):
     x, y = v
@@ -11,5 +11,5 @@ def mostrar_avance(v):
     iteracion[0] += 1
     print(f"Iteración {iteracion[0]}: x={v[0]:.4f}, y={v[1]:.4f}, costo={costo(v):.4f}")
 
-resultado = minimize(costo, x0=[0, 0], method='CG', callback=mostrar_avance, bounds=limites)
+resultado = minimize(costo, x0=[0, 0], method='L-BFGS-B', callback=mostrar_avance, bounds=limites)
 print("\nResultado final:", resultado.x, resultado.fun)

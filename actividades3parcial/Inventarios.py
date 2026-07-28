@@ -26,12 +26,12 @@ def resolver_eoq(D, S, H, C, dias_laborables, lead_time):
     
     return Q_optimo, rop, tiempo_entre_pedidos
 
-D = 0
-S = 0
-H = 0
-C = 0
-dias_lab = 0
-L = 0
+D = 10000
+S = 150
+H = 3
+C = 25
+dias_lab = 250
+L = 5
 
 Q_opt, rop_val, t_ciclo = resolver_eoq(D, S, H, C, dias_lab, L)
 

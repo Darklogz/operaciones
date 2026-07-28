@@ -2,7 +2,7 @@ from scipy.optimize import minimize
 
 # Función de utilidad (a maximizar)
 def utilidad(x, y):
-    return -x**2 - y**2 - x*y + (90000-25000)*x + (110000-35000)*y - 500000
+    return -x**2 - y**2 - x*y + (25)*x + (35)*y - 500
 
 # scipy solo minimiza, así que minimizamos el negativo de la utilidad
 def utilidad_negativa(v):
